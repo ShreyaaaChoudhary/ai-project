@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Empathy Engine</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin: 2rem; color: #202124; }
+    h1 { color: #1a73e8; }
+    textarea { width: 100%; min-height: 160px; font-size: 1rem; padding: 0.75rem; }
+    button { background: #1a73e8; color: white; border: none; padding: 0.75rem 1.5rem; font-size: 1rem; cursor: pointer; }
+    .panel { border: 1px solid #dfe1e5; padding: 1rem; border-radius: 10px; margin-top: 1rem; background: #fff; }
+    .error { color: #b00020; }
+    audio { width: 100%; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <h1>Empathy Engine</h1>
+  <p>Type a message and generate emotionally modulated speech. The system detects Positive, Frustrated, or Neutral tone and adjusts rate and volume.</p>
+
+  <form action="/speak" method="post">
+    <textarea name="text" placeholder="Enter your message here..."></textarea>
+    <div style="margin-top: 1rem;"><button type="submit">Generate Voice</button></div>
+  </form>
+
+  {% if error %}
+  <div class="panel error">{{ error }}</div>
+  {% endif %}
+
+  {% if result %}
+  <div class="panel">
+    <h2>Result</h2>
+    <p><strong>Emotion:</strong> {{ result.emotion }}</p>
+    <p><strong>Intensity:</strong> {{ result.intensity | round(2) }}</p>
+    <p><strong>Rate:</strong> {{ result.params.rate }}</p>
+    <p><strong>Volume:</strong> {{ result.params.volume }}</p>
+    <p><strong>Audio file:</strong> <a href="{{ audio_url }}">Download</a></p>
+    <audio controls>
+      <source src="{{ audio_url }}" type="audio/wav">
+      Your browser does not support the audio element.
+    </audio>
+  </div>
+  {% endif %}
+</body>
+</html>
