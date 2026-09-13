@@ -3,10 +3,10 @@
 A simple Python service that detects emotion from text and generates expressive speech by modulating vocal rate and volume.
 
 ## What it does
-- Accepts text input via a web form or CLI
-- Detects one of three emotions: Positive, Frustrated, Neutral
-- Maps detected emotion to voice parameters (rate and volume)
-- Generates a `.wav` audio file with expressive speech
+- Accepts text input via a web form or CLI.
+- Detects one of three emotions: Positive, Frustrated, Neutral.
+- Maps detected emotion to voice parameters (rate and volume).
+- Generates a `.wav` audio file with expressive speech.
 
 ## Run locally  
 
