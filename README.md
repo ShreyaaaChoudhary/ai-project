@@ -8,7 +8,7 @@ A simple Python service that detects emotion from text and generates expressive 
 - Maps detected emotion to voice parameters (rate and volume)
 - Generates a `.wav` audio file with expressive speech
 
-## Run locally
+## Run locally  
 
 1. Install dependencies:
    ```bash
