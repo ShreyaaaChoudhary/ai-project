@@ -10,7 +10,7 @@ A simple Python service that detects emotion from text and generates expressive 
 
 ## Run locally  
 
-1. Install dependencies:
+1. Install dependencies:  
    ```bash
    pip install -r requirements.txt
    ```
